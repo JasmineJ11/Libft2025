@@ -51,5 +51,4 @@ int main(void)
 	printf("%zu\n",out2);
 	printf("%s\n",dest2);
 
-
 }
