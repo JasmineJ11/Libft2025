@@ -67,7 +67,8 @@
 
 int main(void)
 {
-	printf("ft_isalnum\n");
+	printf("ft_isalnum: ");
+    assert(ft_strlen("abc") == 3);
     int out = ft_isalnum('a');
     printf("%d\n", out);
 }
