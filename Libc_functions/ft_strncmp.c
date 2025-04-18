@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiawli <jiawli@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 11:24:57 by jiawli            #+#    #+#             */
-/*   Updated: 2025/04/15 11:25:00 by jiawli           ###   ########.fr       */
+/*   Created: 2025/04/17 11:27:29 by jiawli            #+#    #+#             */
+/*   Updated: 2025/04/17 11:27:30 by jiawli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include <stdio.h>
-
-size_t strlen( const char *str)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    size_t i = 0;
-    while(str[i])
-    {
-        i++;
-    }
-    return i;
+
+	char *str1 = (char *)s1;
+	char *str2 = (char *)s2;
+
+	size_t i = 0;
+
+	while (i < n)
+	{
+		if(str1[i] == '\0' || str1[i] != str2[i] )
+		{
+			return str1[i] - str2[i];
+		}
+		i++;
+	}
+	return 0;
 }
 
 int main(void)
 {
-    const char str[] = "asdf";
-    size_t out = strlen(str);
-    printf("%zu",out);
-
+	char str1[] = "abcde";
+	char str2[] = "abcdea";
+	int out = ft_strncmp(str1,str2,10);
+	printf("%d\n",out);
 }

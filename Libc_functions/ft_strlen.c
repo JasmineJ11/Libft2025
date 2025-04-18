@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiawli <jiawli@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 17:15:26 by jiawli            #+#    #+#             */
-/*   Updated: 2025/04/15 17:15:28 by jiawli           ###   ########.fr       */
+/*   Created: 2025/04/15 11:24:57 by jiawli            #+#    #+#             */
+/*   Updated: 2025/04/15 11:25:00 by jiawli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-retract
-#include <stdio.h>
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+size_t strlen( const char *str)
 {
-	if (c >= 97 && c <= 122)
-	{
-		c = c + 32;
-	}
-	return (c);
+    size_t i = 0;
+    while(str[i])
+    {
+        i++;
+    }
+    return i;
 }
 
-int	main(void)
+int main(void)
 {
-	int i = 0;
-	char str[] = "Test String.\n";
-	char c;
-	while (str[i])
-	{
-		c = str[i];
-		putchar(ft_toupper(c));
-		i++;
-	}
-	return (0);
+    const char str[] = "asdf";
+    size_t out = strlen(str);
+    printf("%zu",out);
+
 }

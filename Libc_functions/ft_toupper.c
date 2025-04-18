@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiawli <jiawli@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 12:02:02 by jiawli            #+#    #+#             */
-/*   Updated: 2025/04/15 12:02:03 by jiawli           ###   ########.fr       */
+/*   Created: 2025/04/15 17:15:26 by jiawli            #+#    #+#             */
+/*   Updated: 2025/04/15 17:15:28 by jiawli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void *ft_memcpy ( void * destination, const void * source, size_t num ){
-    unsigned char *dest = (unsigned char *)destination;
-    unsigned char *src = (unsigned char*) source;
-
-    size_t i = 0;
-    while(i < num)
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    return destination;
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+	{
+		c = c - 32;
+	}
+	return (c);
 }
 
-int main(void)
+int	main(void)
 {
-    char str1[5] = "abcd";
-    char str2[10];
-    printf("%s",ft_memcpy(str2,str1,4));
-    
+	int i = 0;
+	char str[] = "Test String.\n";
+	char c;
+	while (str[i])
+	{
+		c = str[i];
+		putchar(ft_toupper(c));
+		i++;
+	}
+	return (0);
 }

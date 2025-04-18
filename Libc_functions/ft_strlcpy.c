@@ -47,7 +47,7 @@ int main(void)
 	size_t out1 = ft_strlcpy(dest1, str,15);
 	printf("%zu\n",out1);
 	printf("%s\n",dest1);
-	size_t out2 = ft_strlcpy(dest2, str,15);
+	size_t out2 = ft_strlcpy(dest2, str,2);
 	printf("%zu\n",out2);
 	printf("%s\n",dest2);
 
