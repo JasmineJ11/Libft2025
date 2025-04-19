@@ -10,37 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char *str = (char *) s;
-	char *out = NULL;
+	char	*str;
+	char	*out;
+	size_t	i;
 
-	size_t i = 0;
-
-	while(str[i] != '\0')
+	str = (char *)s;
+	out = NULL;
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if(str[i] == c)
+		if (str[i] == c)
 		{
 			out = str + i;
 		}
 		i++;
 	}
-
 	if (c == '\0')
 	{
-		return str + i;
+		return (str + i);
 	}
-
-	return out;
-
-}
-
-int main(void)
-{
-	char str[] = "abcdecaa";
-	char *out = ft_strrchr(str,'\0');
-	printf("%s\n",out);
+	return (out);
 }

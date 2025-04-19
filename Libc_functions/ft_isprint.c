@@ -11,13 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_isprint (int c)
+int	ft_isprint(int c)
 {
-    return  (c >=' ' && c <= '~');
-}
-
-int main(void)
-{
-    int output = ft_isprint('\n');
-    printf("%d",output);
+	return (c >= ' ' && c <= '~');
 }

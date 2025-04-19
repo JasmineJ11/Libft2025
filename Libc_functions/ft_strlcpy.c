@@ -10,45 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t src_l = 0;
-	while(src[src_l] != 0)
+	size_t	src_l;
+	size_t	i;
+
+	src_l = 0;
+	while (src[src_l] != 0)
 	{
 		src_l++;
 	}
-
-	if(size == 0)
+	if (size == 0)
 	{
-		return src_l;
+		return (src_l);
 	}
-
-
-	size_t i = 0;
-	while(i < size - 1 && src[i] != 0)
+	i = 0;
+	while (i < size - 1 && src[i] != 0)
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return src_l;
+	return (src_l);
 }
 
+// size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+// {
+// 	size_t	src_len;
+// 	size_t	i;
 
-int main(void)
-{
-	char str[] = "12345abcde";
-	char dest1[10];
-	char dest2[5];
-
-	size_t out1 = ft_strlcpy(dest1, str,15);
-	printf("%zu\n",out1);
-	printf("%s\n",dest1);
-	size_t out2 = ft_strlcpy(dest2, str,2);
-	printf("%zu\n",out2);
-	printf("%s\n",dest2);
-
-}
+// 	src_len = ft_strlen(src);
+// 	if (size == 0)
+// 		return (src_len);
+// 	i = 0;
+// 	while (src[i] != '\0' && i < size - 1)
+// 	{
+// 		dst[i] = src[i];
+// 		i++;
+// 	}
+// 	dst[i] = '\0';
+// 	return (src_len);
+// }

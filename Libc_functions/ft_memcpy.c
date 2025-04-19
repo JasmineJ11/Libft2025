@@ -12,24 +12,19 @@
 
 #include <stdio.h>
 
-void *ft_memcpy ( void * destination, const void * source, size_t num ){
-    unsigned char *dest = (unsigned char *)destination;
-    unsigned char *src = (unsigned char*) source;
-
-    size_t i = 0;
-    while(i < num)
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    return destination;
-}
-
-int main(void)
+void	*ft_memcpy(void *destination, const void *source, size_t num)
 {
-    char str1[5] = "abcd";
-    char str2[10] = "12345";
-    char *out = ft_memcpy(str2,str1,4);
-    printf("%s",out);
-    
+	unsigned char	*dest;
+	unsigned char	*src;
+	size_t			i;
+
+	dest = (unsigned char *)destination;
+	src = (unsigned char *)source;
+	i = 0;
+	while (i < num)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return (destination);
 }

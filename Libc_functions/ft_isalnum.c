@@ -10,20 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int ft_isalnum (int c)
+int	ft_isalnum(int c)
 {
-    if(ft_isalpha(c) != 0)
-    {
-        return c;
-    }
-    else if (ft_isdigit(c) != 0)
-    {
-        return c;
-    }
-    return 0;
+	if (ft_isalpha(c) != 0)
+	{
+		return (1);
+	}
+	else if (ft_isdigit(c) != 0)
+	{
+		return (1);
+	}
+	return (0);
 }
 
 // int main(void)
@@ -31,4 +30,3 @@ int ft_isalnum (int c)
 //     int out = ft_isalnum('a');
 //     printf("%d", out);
 // }
-

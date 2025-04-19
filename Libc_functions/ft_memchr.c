@@ -12,26 +12,22 @@
 
 #include <stdio.h>
 
-void *ft_memchr(const void *ptr, int value, size_t num)
+void	*ft_memchr(const void *ptr, int value, size_t num)
 {
-	unsigned char *p = (unsigned char *) ptr;
-	unsigned char v = (unsigned char ) value;
+	unsigned char	*p;
+	unsigned char	v;
+	size_t			i;
 
-	size_t i = 0;
-	while(i < num)
+	p = (unsigned char *)ptr;
+	v = (unsigned char)value;
+	i = 0;
+	while (i < num)
 	{
-		if(p[i] == v)
+		if (p[i] == v)
 		{
-			return p + i;
+			return (p + i);
 		}
 		i++;
 	}
-	return NULL;
-}
-
-int main(void)
-{
-	char str[] = "abcde";
-	char *out = (char*)ft_memchr(str,'c',5);
-	printf("%s",out);
+	return (NULL);
 }

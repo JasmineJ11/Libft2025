@@ -28,10 +28,3 @@ void	*ft_memset(void *ptr, int value, size_t num)
 	}
 	return (ptr);
 }
-
-int	main(void)
-{
-	char str[] = "abcde 456456";
-	char *out = ft_memset(str, '-', 3);
-	printf("%s", out);
-}

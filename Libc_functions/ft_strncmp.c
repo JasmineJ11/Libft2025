@@ -11,29 +11,22 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
+	char	*str1;
+	char	*str2;
+	size_t	i;
 
-	char *str1 = (char *)s1;
-	char *str2 = (char *)s2;
-
-	size_t i = 0;
-
+	str1 = (char *)s1;
+	str2 = (char *)s2;
+	i = 0;
 	while (i < n)
 	{
-		if(str1[i] == '\0' || str1[i] != str2[i] )
+		if (str1[i] == '\0' || str1[i] != str2[i])
 		{
-			return str1[i] - str2[i];
+			return (str1[i] - str2[i]);
 		}
 		i++;
 	}
-	return 0;
-}
-
-int main(void)
-{
-	char str1[] = "abcde";
-	char str2[] = "abcdea";
-	int out = ft_strncmp(str1,str2,10);
-	printf("%d\n",out);
+	return (0);
 }
