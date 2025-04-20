@@ -10,4 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	*ft_calloc(size_t num, size_t size)
+{
+	size_t			total;
+	unsigned char	*mem;
+
+	total = num * size;
+	if (num > 0 && size > 0 && total / num != size)
+		return (NULL);
+	mem = malloc(total);
+	if (mem != NULL)
+	{
+		ft_memset(mem, 0, total);
+	}
+	return (mem);
+}

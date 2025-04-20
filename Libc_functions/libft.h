@@ -20,6 +20,7 @@
 
 int ft_atoi (const char *nptr);
 void ft_bzero(void *str, size_t n);
+void	*ft_calloc(size_t num, size_t size);
 int ft_isalnum (int c);
 int	ft_isalpha(int c);
 int ft_isascii(int c);
@@ -31,6 +32,7 @@ void *ft_memcpy ( void * destination, const void * source, size_t num );
 void *ft_memmove ( void * destination, const void * source, size_t n );
 void	*ft_memset(void *ptr, int value, size_t num);
 char *ft_strchr (const char *s, int c);
+char	*ft_strdup(const char *s);
 size_t ft_strlcat(char *dest, const char *src, size_t size);
 size_t ft_strlcpy(char *dest, const char *src, size_t size);
 size_t ft_strlen( const char *str);
