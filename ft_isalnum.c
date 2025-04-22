@@ -17,7 +17,7 @@ int	ft_isalnum(int c)
 	if (ft_isalpha(c) != 0)
 	{
 		return (1);
-	}
+	} 
 	else if (ft_isdigit(c) != 0)
 	{
 		return (1);
@@ -29,4 +29,5 @@ int	ft_isalnum(int c)
 // {
 //     int out = ft_isalnum('a');
 //     printf("%d", out);
+// 	printf("hello");
 // }

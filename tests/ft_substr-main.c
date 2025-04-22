@@ -6,4 +6,4 @@ int main(void)
 	char *dest;
 	dest = ft_substr(src, 4, 10);
 	printf("%s\n", dest);
-}
+} 

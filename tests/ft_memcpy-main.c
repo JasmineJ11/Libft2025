@@ -7,4 +7,4 @@ int main(void)
     char *out = ft_memcpy(str2,str1,4);
     printf("%s\n",out);
     
-}
+} 

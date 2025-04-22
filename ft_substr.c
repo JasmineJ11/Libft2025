@@ -12,7 +12,11 @@
 
 #include "libft.h"
 
-//
+// 从指定位置开始提取指定长度的子字符串
+// 自动分配内存
+// 返回的子字符串以'\0'结尾
+// 处理边界情况（如start超出字符串长度）
+// 返回的内存必须由调用者释放
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -27,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (s[s_len])
 	{
 		s_len++;
-	}
+	} 
 	// 2.确定dest的长度。
 	if (start > s_len)
 		len = 0;

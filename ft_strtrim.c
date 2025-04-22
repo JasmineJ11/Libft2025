@@ -32,10 +32,10 @@ char *ft_strtrim(char const *s1, char const *set)
 	
 }
 
-int main(void)
-{
-	char *s1 = "abdab23423abab";
-	char *dest;
-	dest = ft_strtrim(s1,"ab");
-	printf("%s\n",dest);
-} 
+// int main(void)
+// {
+// 	char *s1 = "abdab23423abab";
+// 	char *dest;
+// 	dest = ft_strtrim(s1,"ab");
+// 	printf("%s\n",dest);
+// } 
