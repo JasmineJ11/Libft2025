@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	char *big = "12345355";
+	char *big = "12345\200355";
 	char *little = "35";
 
 	char *out = ft_strnstr(big, little, 8);

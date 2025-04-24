@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiawli <jiawli@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 09:42:09 by jiawli            #+#    #+#             */
-/*   Updated: 2025/04/17 09:42:11 by jiawli           ###   ########.fr       */
+/*   Created: 2025/04/24 12:03:45 by jiawli            #+#    #+#             */
+/*   Updated: 2025/04/24 12:03:48 by jiawli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned const char	*str;
-	unsigned char		chr;
-	size_t				i;
-
-	str = (unsigned const char *)s;
-	chr = (unsigned char)c;
-	i = 0;
-	while (str[i])
+	if (n == -2147483648)
 	{
-		if (str[i] == chr)
-		{
-			return ((char *)str + i);
-		}
-		i++;
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
-	if (chr == '\0')
+	if (n < 0)
 	{
-		return ((char *)str + i);
+		ft_putchar_fd('-', fd);
+		n = -n;
 	}
-	return (NULL);
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	ft_putchar_fd(n % 10 + '0', fd);
 }
 
 // int	main(void)
 // {
-// 	char s[] = "tripouille";
-// 	char *out = ft_strchr(s, 't' + 256);
-// 	printf("%s\n", out);
+// 	int	n;
+
+// 	n = 1234;
+// 	ft_putnbr_fd(n, 1);
 // }

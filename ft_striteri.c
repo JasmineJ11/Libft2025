@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchar.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiawli <jiawli@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 09:42:09 by jiawli            #+#    #+#             */
-/*   Updated: 2025/04/17 09:42:11 by jiawli           ###   ########.fr       */
+/*   Created: 2025/04/24 09:02:57 by jiawli            #+#    #+#             */
+/*   Updated: 2025/04/24 09:03:00 by jiawli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned const char	*str;
-	unsigned char		chr;
-	size_t				i;
+	unsigned int i;
 
-	str = (unsigned const char *)s;
-	chr = (unsigned char)c;
+	if(!s || !f)
+		return ;
+	
 	i = 0;
-	while (str[i])
+	while(s[i] != '\0')
 	{
-		if (str[i] == chr)
-		{
-			return ((char *)str + i);
-		}
+		f(i,&s[i]);
 		i++;
 	}
-	if (chr == '\0')
-	{
-		return ((char *)str + i);
-	}
-	return (NULL);
 }
-
-// int	main(void)
+// void ttouuper(unsigned i, char *c)
 // {
-// 	char s[] = "tripouille";
-// 	char *out = ft_strchr(s, 't' + 256);
-// 	printf("%s\n", out);
+// 	if (i % 2 == 0)
+// 	{
+// 		*c = *c -32;
+// 	}
+	
+// }
+// int main(void)
+// {
+// 	char str[] = "abcdefg";
+// 	ft_striteri(str,ttouuper);
+// 	printf("%s\n",str);
 // }

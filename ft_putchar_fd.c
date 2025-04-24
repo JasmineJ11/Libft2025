@@ -1,44 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchar.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiawli <jiawli@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 09:42:09 by jiawli            #+#    #+#             */
-/*   Updated: 2025/04/17 09:42:11 by jiawli           ###   ########.fr       */
+/*   Created: 2025/04/24 10:39:22 by jiawli            #+#    #+#             */
+/*   Updated: 2025/04/24 10:39:25 by jiawli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned const char	*str;
-	unsigned char		chr;
-	size_t				i;
-
-	str = (unsigned const char *)s;
-	chr = (unsigned char)c;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == chr)
-		{
-			return ((char *)str + i);
-		}
-		i++;
-	}
-	if (chr == '\0')
-	{
-		return ((char *)str + i);
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }
 
-// int	main(void)
+// int main(void)
 // {
-// 	char s[] = "tripouille";
-// 	char *out = ft_strchr(s, 't' + 256);
-// 	printf("%s\n", out);
+// 	ft_putchar_fd('H', 1);
+// 	ft_putchar_fd('i', 1);
+// 	ft_putchar_fd('\n', 1);
+
+// 	ft_putchar_fd('!', 2);
+// 	ft_putchar_fd('\n', 2);
+
+// 	return (0);
 // }

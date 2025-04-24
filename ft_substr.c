@@ -41,11 +41,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (dest == NULL)
 		return (NULL);
 	ft_memcpy(dest, s + (size_t)start, len);
-	// while(i< len)
-	// {
-	// 	dest[i] = s[start + i];
-	// 	i++;
-	// }
+	
 	dest[len] = '\0';
 	return (dest);
 }

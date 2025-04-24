@@ -90,25 +90,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (allocate_array(s, c, array));
 }
-
-int	main(void)
-{
-	char *str = "aaa,bb,ccc,dddd";
-	char c = ',';
-
-	int wordLen = word_len(str, c);
-	printf("WordLen: %i\n", wordLen);
-
-	int countWord = count_word(str, c);
-	printf("CountWord: %i\n", countWord);
-
-	char **out = ft_split(str, c);
-
-	int i = 0;
-
-	while (out[i])
-	{
-		printf("%s\n", out[i]);
-		i++;
-	}
-}

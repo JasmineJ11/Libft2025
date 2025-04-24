@@ -14,24 +14,32 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*str;
-	char	*out;
+	const char	*str =  s;
+	unsigned char chr  = (unsigned char) c;
+	const char 	*out  = NULL;
 	size_t	i;
 
-	str = (char *)s;
-	out = NULL;
+
+	
 	i = 0;
+
 	while (str[i] != '\0')
 	{
-		if (str[i] == c)
+		if (str[i] == chr)
 		{
 			out = str + i;
 		}
 		i++;
 	}
-	if (c == '\0')
+	if (chr == '\0')
 	{
-		return (str + i);
+		return (char *)(str + i);
 	}
-	return (out);
+	return (char*)out;
 }
+// int	main(void)
+// {
+// 	char s[] = "tripouille";
+// 	char *out = ft_strrchr(s, 't' + 256);
+// 	printf("%s\n", out);
+// }

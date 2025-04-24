@@ -1,44 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchar.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiawli <jiawli@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 09:42:09 by jiawli            #+#    #+#             */
-/*   Updated: 2025/04/17 09:42:11 by jiawli           ###   ########.fr       */
+/*   Created: 2025/04/24 11:50:12 by jiawli            #+#    #+#             */
+/*   Updated: 2025/04/24 11:50:14 by jiawli           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void ft_putendl_fd(char *s, int fd)
 {
-	unsigned const char	*str;
-	unsigned char		chr;
-	size_t				i;
+	ft_putstr_fd(s,fd);
+	ft_putchar_fd('\n',fd);
 
-	str = (unsigned const char *)s;
-	chr = (unsigned char)c;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == chr)
-		{
-			return ((char *)str + i);
-		}
-		i++;
-	}
-	if (chr == '\0')
-	{
-		return ((char *)str + i);
-	}
-	return (NULL);
 }
 
-// int	main(void)
+// int main(void)
 // {
-// 	char s[] = "tripouille";
-// 	char *out = ft_strchr(s, 't' + 256);
-// 	printf("%s\n", out);
+// 	ft_putendl_fd("aaa",1);
+// 	ft_putendl_fd("bbb",2);
 // }
