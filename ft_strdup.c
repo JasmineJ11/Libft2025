@@ -16,12 +16,12 @@
 // 复制整个字符串，包括'\0'结束符
 // 返回的内存必须由调用者使用 free 释放
 
-char	*ft_strdup(const char *s) 
+char	*ft_strdup(const char *s)
 {
 	size_t	len;
 	char	*dest;
 	size_t	i;
- 
+
 	len = 0;
 	i = 0;
 	while (s[len])
@@ -30,9 +30,9 @@ char	*ft_strdup(const char *s)
 	}
 	dest = malloc(sizeof(char) * (len + 1));
 	if (dest == NULL)
-		return (NULL); 
+		return (NULL);
 	while (s[i] != '\0')
-	{ 
+	{
 		dest[i] = s[i];
 		i++;
 	}

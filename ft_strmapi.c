@@ -11,34 +11,31 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *res;
-	unsigned int i;
+	char			*res;
+	unsigned int	i;
 
 	if (!s || !f)
-		return NULL;
-
+		return (NULL);
 	res = malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if(res == NULL)
-		return NULL;
-
+	if (res == NULL)
+		return (NULL);
 	i = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		res[i] = f(i,s[i]);
+		res[i] = f(i, s[i]);
 		i++;
 	}
 	res[i] = '\0';
-	return res; 
-
+	return (res);
 }
 
 // char ttoupper(unsigned int i, char c)
 // {
 // 	if(i % 2 == 0 )
 // 		return (c -32);
-// 	return c;	
+// 	return (c);
 // }
 
 // int main(void)

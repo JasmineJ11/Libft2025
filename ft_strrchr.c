@@ -14,15 +14,13 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*str =  s;
-	unsigned char chr  = (unsigned char) c;
-	const char 	*out  = NULL;
-	size_t	i;
+	const char		*str = s;
+	unsigned char	chr;
+	const char		*out = NULL;
+	size_t			i;
 
-
-	
+	chr = (unsigned char)c;
 	i = 0;
-
 	while (str[i] != '\0')
 	{
 		if (str[i] == chr)
@@ -35,7 +33,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		return (char *)(str + i);
 	}
-	return (char*)out;
+	return ((char *)out);
 }
 // int	main(void)
 // {

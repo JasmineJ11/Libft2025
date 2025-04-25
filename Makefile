@@ -36,15 +36,14 @@ SRCS =  ft_atoi.c \
 		ft_substr.c \
 		ft_toupper.c \
 		ft_tolower.c 
-		
+
 OBJ = $(SRCS:.c=.o)
 
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-# main.o : main.c
-#	$(CC) $(CFLAGS) -c main.c
+.SECONDARY: $(OBJ)
 
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
@@ -55,7 +54,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) 
 
 fclean: clean
 	rm -f $(NAME)

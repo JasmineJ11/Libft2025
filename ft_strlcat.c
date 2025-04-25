@@ -32,7 +32,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	while (src[i] != '\0' && size > dest_l + i + 1)
 	{
 		dest[dest_l + i] = src[i];
-		i++; 
+		i++;
 	}
 	dest[dest_l + i] = '\0';
 	return (dest_l + src_l);
@@ -41,13 +41,13 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 // {
 // 	signal(SIGSEGV, sigsegv);
 // 	title("ft_strlcat\t: ")
-	
-// 	char dest[30]; 
+
+// 	char dest[30];
 // 	memset(dest, 0, 30);
 // 	char * src = (char *)"AAAAAAAAA";
 // 	dest[0] = 'B';
-// 	/* 1 */ 
-// 	ft_strlcat(dest, src, 0) 
-// 	strlen(src) 
-// 	strcmp(dest, "B"); 
+// 	/* 1 */
+// 	ft_strlcat(dest, src, 0)
+// 	strlen(src)
+// 	strcmp(dest, "B");
 // }

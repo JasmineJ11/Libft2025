@@ -48,11 +48,10 @@ char	*ft_itoa(int n)
 	}
 	while (nbr > 0)
 	{
-			len--;
-			result[len] = nbr % 10 + '0';
-			nbr = nbr / 10;
+		len--;
+		result[len] = nbr % 10 + '0';
+		nbr = nbr / 10;
 	}
-		
 	return (result);
 }
 // int main(void)
