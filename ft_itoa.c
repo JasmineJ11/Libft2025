@@ -40,17 +40,19 @@ char	*ft_itoa(int n)
 		return (NULL);
 	result[len] = '\0';
 	if (nbr == 0)
-		result[0] = '\0';
+		result[0] = '0';
 	if (nbr < 0)
 	{
 		nbr = -nbr;
 		result[0] = '-';
 	}
-	while (len--)
+	while (nbr > 0)
 	{
-		result[len] = nbr % 10 + '0';
-		nbr = nbr / 10;
+			len--;
+			result[len] = nbr % 10 + '0';
+			nbr = nbr / 10;
 	}
+		
 	return (result);
 }
 // int main(void)
