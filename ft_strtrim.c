@@ -26,11 +26,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	return (ft_substr(s1, start, end - start));
 }
-
-// int main(void)
-// {
-// 	char *s1 = "abdab23423abab";
-// 	char *dest;
-// 	dest = ft_strtrim(s1,"ab");
-// 	printf("%s\n",dest);
-// }

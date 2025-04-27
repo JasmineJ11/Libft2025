@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//不会自动分配内存
-//不检查'\0'结束符
-//源区域和目标区域不能重叠（重叠时应使用 memmove）
-
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *destination, const void *source, size_t num)
 {

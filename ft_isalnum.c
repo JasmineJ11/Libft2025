@@ -24,10 +24,3 @@ int	ft_isalnum(int c)
 	}
 	return (0);
 }
-
-// int main(void)
-// {
-//     int out = ft_isalnum('a');
-//     printf("%d", out);
-// 	printf("hello");
-// }

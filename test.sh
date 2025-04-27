@@ -4,4 +4,4 @@ echo 'Compiler:'
 
 echo 'Norminette:'
 norminette ft_$1.c
-rm a.out 
+#rm a.out 

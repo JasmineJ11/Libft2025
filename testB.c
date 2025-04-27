@@ -316,6 +316,75 @@ void	ft_isprint_test(void)
 		printf("Test 6: FAIL\n");
 }
 
+void	ft_itoa_test(void)
+{
+	char	*result0 = ft_itoa(657);
+	char	*result1 = ft_itoa(-8475);
+	char	*result2 = ft_itoa(2147483647);
+	char	*result3 = ft_itoa(-2147483648);
+	char	*result4 = ft_itoa(0);
+
+	// Test 1
+	if (result0[0] == '6')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
+
+	// Test 2
+	if (result0[3] == '\0')
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
+
+	// Test 3
+	if (result1[0] == '-')
+		printf("Test 3: OK\n");
+	else
+		printf("Test 3: FAIL\n");
+
+	// Test 4
+	if (result1[1] == '8')
+		printf("Test 4: OK\n");
+	else
+		printf("Test 4: FAIL\n");
+	
+	// Test 5
+	if (result2[0] == '2')
+		printf("Test 5: OK\n");
+	else
+		printf("Test 5: FAIL\n");
+
+	// Test 6
+	if (result2[9] == '7')
+		printf("Test 6: OK\n");
+	else
+		printf("Test 6: FAIL\n");
+
+	// Test 7
+	if (result3[0] == '-')
+		printf("Test 7: OK\n");
+	else
+		printf("Test 7: FAIL\n");
+
+	// Test 8
+	if (result3[10] == '8')
+		printf("Test 8: OK\n");
+	else
+		printf("Test 8: FAIL\n");
+
+	// Test 9
+	if (result4[0] == '0')
+		printf("Test 9: OK\n");
+	else
+		printf("Test 9: FAIL\n");
+
+	free(result0);
+	free(result1);
+	free(result2);
+	free(result3);
+	free(result4);
+}
+
 void	ft_memchr_test(void)
 {
 	char	*result0 = (char *)ft_memchr("Hello world!", 'l', 13);
@@ -520,6 +589,327 @@ void	ft_memset_test(void)
 		printf("Test 6: FAIL\n");
 }
 
+void	ft_putchar_fd_test(void)
+{
+	ft_putchar_fd('a', 2);
+
+    FILE *file = fopen("stderr.log", "r");
+    if (file == NULL) {
+        printf("Failed to open file\n");
+        return ;
+    }
+	
+	// Test 1
+	char char1 = fgetc(file);
+	
+	if (char1 == EOF)
+	{
+        printf("Failed to read the file\n");
+        fclose(file);
+        return ;
+	}
+
+	if (char1 == 'a')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
+
+	// Test 2
+	char char2 = fgetc(file);
+	
+	if (char2 == EOF)
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
+
+    fclose(file);
+}
+
+void	ft_putendl_fd_test(void)
+{
+	ft_putendl_fd("BB", 2);
+
+    FILE *file = fopen("stderr.log", "r");
+    if (file == NULL) {
+        printf("Failed to open file\n");
+        return ;
+    }
+	
+	// Test 1
+	char char1 = fgetc(file);
+	
+	if (char1 == EOF)
+	{
+        printf("Failed to read the file\n");
+        fclose(file);
+        return ;
+	}
+
+	if (char1 == 'a')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
+
+	// Test 2
+	char char2 = fgetc(file);
+	
+	if (char2 == 'B')
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
+
+	// Test 3
+	char char3 = fgetc(file);
+	
+	if (char3 == 'B')
+		printf("Test 3: OK\n");
+	else
+		printf("Test 3: FAIL\n");
+
+	// Test 4
+	char char4 = fgetc(file);
+	
+	if (char4 == '\n')
+		printf("Test 4: OK\n");
+	else
+		printf("Test 4: FAIL\n");
+
+	// Test 5
+	char char5 = fgetc(file);
+	
+	if (char5 == EOF)
+		printf("Test 5: OK\n");
+	else
+		printf("Test 5: FAIL\n");
+	
+	fclose(file);
+}
+
+void	ft_putnbr_fd_test(void)
+{
+	ft_putnbr_fd(-45, 2);
+
+    FILE *file = fopen("stderr.log", "r");
+    if (file == NULL) {
+        printf("Failed to open file\n");
+        return ;
+    }
+	
+	// Test 1
+	char char1 = fgetc(file);
+	
+	if (char1 == EOF)
+	{
+        printf("Failed to read the file\n");
+        fclose(file);
+        return ;
+	}
+
+	if (char1 == 'a')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
+
+	// Test 2
+	char char2 = fgetc(file);
+	
+	if (char2 == 'B')
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
+
+	// Test 3
+	char char3 = fgetc(file);
+	
+	if (char3 == 'B')
+		printf("Test 3: OK\n");
+	else
+		printf("Test 3: FAIL\n");
+
+	// Test 4
+	char char4 = fgetc(file);
+	
+	if (char4 == '\n')
+		printf("Test 4: OK\n");
+	else
+		printf("Test 4: FAIL\n");
+
+	// Test 5
+	char char5 = fgetc(file);
+	
+	if (char5 == '-')
+		printf("Test 5: OK\n");
+	else
+		printf("Test 5: FAIL\n");
+	
+	// Test 6
+	char char6 = fgetc(file);
+	
+	if (char6 == '4')
+		printf("Test 6: OK\n");
+	else
+		printf("Test 6: FAIL\n");
+
+	// Test 7
+	char char7 = fgetc(file);
+	
+	if (char7 == '5')
+		printf("Test 7: OK\n");
+	else
+		printf("Test 7: FAIL\n");
+
+	// Test 8
+	char char8 = fgetc(file);
+	
+	if (char8 == EOF)
+		printf("Test 8: OK\n");
+	else
+		printf("Test 8: FAIL\n");
+
+	fclose(file);
+}
+
+void	ft_putstr_fd_test(void)
+{
+	ft_putstr_fd("CC", 2);
+
+    FILE *file = fopen("stderr.log", "r");
+    if (file == NULL) {
+        printf("Failed to open file\n");
+        return ;
+    }
+	
+	// Test 1
+	char char1 = fgetc(file);
+	
+	if (char1 == EOF)
+	{
+        printf("Failed to read the file\n");
+        fclose(file);
+        return ;
+	}
+
+	if (char1 == 'a')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
+
+	// Test 2
+	char char2 = fgetc(file);
+	
+	if (char2 == 'B')
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
+
+	// Test 3
+	char char3 = fgetc(file);
+	
+	if (char3 == 'B')
+		printf("Test 3: OK\n");
+	else
+		printf("Test 3: FAIL\n");
+
+	// Test 4
+	char char4 = fgetc(file);
+	
+	if (char4 == '\n')
+		printf("Test 4: OK\n");
+	else
+		printf("Test 4: FAIL\n");
+
+	// Test 5
+	char char5 = fgetc(file);
+	
+	if (char5 == '-')
+		printf("Test 5: OK\n");
+	else
+		printf("Test 5: FAIL\n");
+	
+	// Test 6
+	char char6 = fgetc(file);
+	
+	if (char6 == '4')
+		printf("Test 6: OK\n");
+	else
+		printf("Test 6: FAIL\n");
+
+	// Test 7
+	char char7 = fgetc(file);
+	
+	if (char7 == '5')
+		printf("Test 7: OK\n");
+	else
+		printf("Test 7: FAIL\n");
+
+	// Test 8
+	char char8 = fgetc(file);
+	
+	if (char8 == 'C')
+		printf("Test 8: OK\n");
+	else
+		printf("Test 8: FAIL\n");
+
+	// Test 9
+	char char9 = fgetc(file);
+	
+	if (char9 == 'C')
+		printf("Test 9: OK\n");
+	else
+		printf("Test 9: FAIL\n");
+
+	// Test 0
+	char char10 = fgetc(file);
+	
+	if (char10 == EOF)
+		printf("Test 0: OK\n");
+	else
+		printf("Test 0: FAIL\n");
+
+	fclose(file);
+}
+
+void	ft_split_test(void)
+{
+	char	**result0 = ft_split("  Hello my name is Boris  ", ' ');
+	char	**result1 = ft_split("", ' ');
+	size_t	result0_len = 5;
+	size_t	i = 0;
+
+	// Test 1
+	if (result0[0][0] == 'H')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
+
+	// Test 2
+	if (result0[1][0] == 'm')
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
+
+	// Test 3
+	if (result0[4][4] == 's')
+		printf("Test 3: OK\n");
+	else
+		printf("Test 3: FAIL\n");
+
+	// Test 4
+	if (result1[0] == NULL)
+		printf("Test 4: OK\n");
+	else
+		printf("Test 4: FAIL\n");
+	
+	while (i < result0_len)
+	{
+		free(result0[i]);
+		i++;
+	}
+	free(result0);
+	free(result1[0]);
+	free(result1);
+}
+
 void	ft_strchr_test(void)
 {
 	char	*result0 = ft_strchr("Hello world!", 'l');
@@ -581,6 +971,105 @@ void	ft_strdup_test()
 		printf("Test 4: OK\n");
 	else
 		printf("Test 4: FAIL\n");
+
+	free(result0);
+	free(result1);
+	free(result2);
+}
+
+void	ft_striteri_test_f(unsigned int i, char *c)
+{
+	if (i % 2 == 0)
+		*c = *c - 32;
+}
+
+void	ft_striteri_test(void)
+{
+	char	s[10] = "aaaaaaaaa";
+	ft_striteri(s, &ft_striteri_test_f);
+
+	// Test 1
+	if (s[0] == 'A')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
+
+	// Test 2
+	if (s[1] == 'a')
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
+
+	// Test 3
+	if (s[2] == 'A')
+		printf("Test 3: OK\n");
+	else
+		printf("Test 3: FAIL\n");
+
+	// Test 4
+	if (s[3] == 'a')
+		printf("Test 4: OK\n");
+	else
+		printf("Test 4: FAIL\n");
+	
+	// Test 5
+	if (s[8] == 'A')
+		printf("Test 5: OK\n");
+	else
+		printf("Test 5: FAIL\n");
+
+	// Test 6
+	if (s[9] == '\0')
+		printf("Test 6: OK\n");
+	else
+		printf("Test 6: FAIL\n");
+}
+
+void	ft_strjoin_test(void)
+{
+	char	*result0 = ft_strjoin("Hello", "Boris");
+	char	*result1 = ft_strjoin("Hello", NULL);
+	char	*result2 = ft_strjoin(NULL, "AAA");
+
+	// Test 1
+	if (result0[0] == 'H')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
+	
+	// Test 2
+	if (result0[9] == 's')
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
+
+	// Test 3
+	if (result0[10] == '\0')
+		printf("Test 3: OK\n");
+	else
+		printf("Test 3: FAIL\n");
+
+	// Test 4
+	if (result0[7] == 'r')
+		printf("Test 4: OK\n");
+	else
+		printf("Test 4: FAIL\n");
+
+	// Test 5
+	if (result1 == NULL)
+		printf("Test 5: OK\n");
+	else
+		printf("Test 5: FAIL\n");
+
+	// Test 6
+	if (result2 == NULL)
+		printf("Test 6: OK\n");
+	else
+		printf("Test 6: FAIL\n");
+
+	free(result0);
+	free(result1);
+	free(result2);
 }
 
 void	ft_strlcat_test(void)
@@ -702,6 +1191,56 @@ void	ft_strlen_test(void)
 		printf("Test 3: FAIL\n");
 }
 
+char	ft_strmapi_test_f(unsigned int i, char c)
+{
+	if (i % 2 == 0)
+		return (c - 32);
+	return (c);
+}
+
+void	ft_strmapi_test(void)
+{
+	char	*result0 = ft_strmapi("aaaaaaaaa", &ft_strmapi_test_f);
+
+	// Test 1
+	if (result0[0] == 'A')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
+
+	// Test 2
+	if (result0[1] == 'a')
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
+
+	// Test 3
+	if (result0[2] == 'A')
+		printf("Test 3: OK\n");
+	else
+		printf("Test 3: FAIL\n");
+
+	// Test 4
+	if (result0[3] == 'a')
+		printf("Test 4: OK\n");
+	else
+		printf("Test 4: FAIL\n");
+	
+	// Test 5
+	if (result0[8] == 'A')
+		printf("Test 5: OK\n");
+	else
+		printf("Test 5: FAIL\n");
+
+	// Test 6
+	if (result0[9] == '\0')
+		printf("Test 6: OK\n");
+	else
+		printf("Test 6: FAIL\n");
+
+	free(result0);
+}
+
 void	ft_strncmp_test(void)
 {
 	// Test 1
@@ -794,6 +1333,110 @@ void	ft_strrchr_test(void)
 		printf("Test 4: FAIL\n");
 }
 
+void	ft_strtrim_test(void)
+{
+	char	*result0 = ft_strtrim("BrtsBoooBtrB", "rBt");
+	char	*result1 = ft_strtrim("BrBBrr", "rB");
+	char	*result2 = ft_strtrim("Boris is home", "");
+	char	*result3 = ft_strtrim(NULL, "huhj"); 
+
+	// Test 1
+	if (result0[0] == 's')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
+	
+	// Test 2
+	if (result0[1] == 'B')
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
+
+	// Test 3
+	if (result0[4] == 'o')
+		printf("Test 3: OK\n");
+	else
+		printf("Test 3: FAIL\n");
+
+	// Test 4
+	if (result0[5] == '\0')
+		printf("Test 4: OK\n");
+	else
+		printf("Test 4: FAIL\n");
+
+	// Test 5
+	if (result1[0] == '\0')
+		printf("Test 5: OK\n");
+	else
+		printf("Test 5: FAIL\n");
+
+	// Test 6
+	if (result2[12] == 'e')
+		printf("Test 6: OK\n");
+	else
+		printf("Test 6: FAIL\n");
+
+	// Test 7
+	if (result3 == NULL)
+		printf("Test 7: OK\n");
+	else
+		printf("Test 7: FAIL\n");
+	
+	free(result0);
+	free(result1);
+	free(result2);
+	free(result3);
+}
+
+void	ft_substr_test(void)
+{
+	char	*result0 = ft_substr("Boris is home", 0, 13);
+	char	*result1 = ft_substr("Boris is home", 5, 17);
+	char	*result2 = ft_substr("Boris is home", 7, 2);
+	char	*result3 = ft_substr(NULL, 0, 13);
+
+	// Test 1
+	if (result0[0] == 'B')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
+	
+	// Test 2
+	if (result0[13] == '\0')
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
+
+	// Test 3
+	if (result1[0] == ' ')
+		printf("Test 3: OK\n");
+	else
+		printf("Test 3: FAIL\n");
+
+	// Test 4
+	if (result1[7] == 'e')
+		printf("Test 4: OK\n");
+	else
+		printf("Test 4: FAIL\n");
+
+	// Test 5
+	if (result2[2] == '\0')
+		printf("Test 5: OK\n");
+	else
+		printf("Test 5: FAIL\n");
+
+	// Test 6
+	if (result3 == NULL)
+		printf("Test 6: OK\n");
+	else
+		printf("Test 6: FAIL\n");
+
+	free(result0);
+	free(result1);
+	free(result2);
+	free(result3);
+}
+
 void	ft_tolower_test(void)
 {
 	// Test 1
@@ -874,6 +1517,9 @@ int	main(void)
 	printf("\nft_isprint\n");
 	ft_isprint_test();
 
+	printf("\nft_itoa\n");
+	ft_itoa_test();
+
 	printf("\nft_memchr\n");
 	ft_memchr_test();
 
@@ -889,11 +1535,32 @@ int	main(void)
 	printf("\nft_memset\n");
 	ft_memset_test();
 
+	printf("\nft_putchar_fd\n");
+	ft_putchar_fd_test();
+
+	printf("\nft_putendl_fd\n");
+	ft_putendl_fd_test();
+
+	printf("\nft_putnbr_fd\n");
+	ft_putnbr_fd_test();
+
+	printf("\nft_putstr_fd\n");
+	ft_putstr_fd_test();
+
+	printf("\nft_split\n");
+	ft_split_test();
+
 	printf("\nft_strchr\n");
 	ft_strchr_test();
 
 	printf("\nft_strdup\n");
 	ft_strdup_test();
+
+	printf("\nft_striteri\n");
+	ft_striteri_test();
+
+	printf("\nft_strjoin\n");
+	ft_strjoin_test();
 
 	printf("\nft_strlcat\n");
 	ft_strlcat_test();
@@ -904,6 +1571,9 @@ int	main(void)
 	printf("\nft_strlen\n");
 	ft_strlen_test();
 
+	printf("\nft_strmapi\n");
+	ft_strmapi_test();
+
 	printf("\nft_strncmp\n");
 	ft_strncmp_test();
 
@@ -912,6 +1582,12 @@ int	main(void)
 	
 	printf("\nft_strrchr\n");
 	ft_strrchr_test();
+
+	printf("\nft_strtrim\n");
+	ft_strtrim_test();
+
+	printf("\nft_substr\n");
+	ft_substr_test();
 
 	printf("\nft_tolower\n");
 	ft_tolower_test();

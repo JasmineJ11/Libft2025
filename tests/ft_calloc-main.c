@@ -2,31 +2,45 @@
 
 int	main(void)
 {
-	int *num = ft_calloc(4, sizeof(char));
+	size_t	nmemb = 2;
+	size_t	size = 3;
+	char	*buffer = ft_calloc(nmemb, size);
 
-	if (num == NULL)
-	{
-		printf("failed");
-		return (1);
-	}
+	// Test 1
+	if (buffer[0] == '\0')
+		printf("Test 1: OK\n");
+	else
+		printf("Test 1: FAIL\n");
 
-	int i = 0;
-	while (i < 4)
-	{
-		printf("%d\n", num[i]);
-		i++;
-	}
+	// Test 2
+	if (buffer[1] == '\0')
+		printf("Test 2: OK\n");
+	else
+		printf("Test 2: FAIL\n");
 
-	num[0] = 4;
-	num[3] = 8;
+	// Test 3
+	if (buffer[2] == '\0')
+		printf("Test 3: OK\n");
+	else
+		printf("Test 3: FAIL\n");
 
-	int j = 0;
-	while (j < 4)
-	{
-		printf("%d\n", num[j]);
-		j++;
-	}
+	// Test 4
+	if (buffer[3] == '\0')
+		printf("Test 4: OK\n");
+	else
+		printf("Test 4: FAIL\n");
 
-	free(num);
-	return (0);
+	// Test 5
+	if (buffer[4] == '\0')
+		printf("Test 5: OK\n");
+	else
+		printf("Test 5: FAIL\n");
+
+	// Test 6
+	if (buffer[5] == '\0')
+		printf("Test 6: OK\n");
+	else
+		printf("Test 6: FAIL\n");
+	
+	free(buffer);
 }

@@ -14,12 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (s == NULL)
+		return ;
 	if (s)
 		write(fd, s, ft_strlen(s));
 }
-
-// int main(void)
-// {
-// 	ft_putstr_fd("aaa\n",1);
-// 	ft_putstr_fd("bbb\n",2);
-// }

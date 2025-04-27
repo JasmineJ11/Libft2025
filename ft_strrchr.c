@@ -14,11 +14,13 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char		*str = s;
+	const char		*str;
 	unsigned char	chr;
-	const char		*out = NULL;
+	const char		*out;
 	size_t			i;
 
+	str = s;
+	out = NULL;
 	chr = (unsigned char)c;
 	i = 0;
 	while (str[i] != '\0')
@@ -31,13 +33,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (chr == '\0')
 	{
-		return (char *)(str + i);
+		return ((char *)(str + i));
 	}
 	return ((char *)out);
 }
-// int	main(void)
-// {
-// 	char s[] = "tripouille";
-// 	char *out = ft_strrchr(s, 't' + 256);
-// 	printf("%s\n", out);
-// }

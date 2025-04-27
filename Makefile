@@ -43,7 +43,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-.SECONDARY: $(OBJ)
+#.SECONDARY: $(OBJ)
 
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
